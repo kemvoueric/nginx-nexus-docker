@@ -5,8 +5,8 @@ services:
     image: nginx-nexusproxy
     ports:
       - '443:443'
-      - '8600:8600'
-      - '8601:8601'
+      - '8085:8085'
+      - '8086:8086'
   
     command: [ nginx, '-g', 'daemon off;' ]
 
