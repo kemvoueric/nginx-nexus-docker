@@ -48,7 +48,7 @@ fi
 
 # Generate nexus Cert
 openssl req -subj "/C=US/ST=Random/L=Random/O=Global Security/OU=IT Department/CN=localhost"  -new -sha256 -nodes -out ../certs/nexus.csr -newkey rsa:2048 -keyout ../certs/nexuskey.pem
-openssl x509 -req -passin pass:"$1" -in ../certs/nexus.csr -CA ../certs/rootCA.pem -CAkey ../certs/rootCA.key -CAcreateserial -out ../certs/nexuscert.crt -days 500 -sha256 -extfile <(printf "subjectAltName=DNS:localhost,DNS:nexus-repo")
+openssl x509 -req -passin pass:"$1" -in ../certs/nexus.csr -CA ../certs/rootCA.pem -CAkey ../certs/rootCA.key -CAcreateserial -out ../certs/nexuscert.crt -days 500 -sha256 -extfile <(printf "subjectAltName=DNS:172.20.1.43,DNS:millgrpinc.com")
 
 cd ../nginx/
 echo $PWD
